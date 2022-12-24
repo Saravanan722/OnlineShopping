@@ -75,7 +75,9 @@ class Cart {
     fun clearAll() {
     }
 
-
+    fun getProductCount(): Int {
+        return cartItems.size
+    }
 }
 
 
