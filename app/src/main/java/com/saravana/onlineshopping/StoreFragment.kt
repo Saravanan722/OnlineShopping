@@ -5,13 +5,13 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.navigation.fragment.findNavController
 import com.saravana.onlineshopping.databinding.FragmentFirstBinding
+import com.saravana.onlineshoppingcore.Store
 
 /**
  * A simple [Fragment] subclass as the default destination in the navigation.
  */
-class FirstFragment : Fragment() {
+class StoreFragment : Fragment() {
 
     private var _binding: FragmentFirstBinding? = null
 
@@ -31,6 +31,10 @@ class FirstFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        Store.getStoreItem()
+        Store.searchItem("Apple")
+        Store.getProductCount()
+
 
 //        binding.buttonFirst.setOnClickListener {
 //            findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)

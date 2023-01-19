@@ -29,9 +29,7 @@ class LaserPrinter(private val invoice: Invoice) : Printer {
 
         println("Total discount: ${invoice.discount}")
         println("Total: ${invoice.getTotal()}")
-        print("Enter Coupon Number: ")
-        val getCoupon: String? = readLine()
-        println(invoice.applyCoupon(getCoupon))
+
     }
 }
 

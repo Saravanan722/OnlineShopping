@@ -2,68 +2,61 @@ package com.saravana.onlineshoppingcore
 
 
 open class Payment(
-    val ID: Int,
-    val cardType: String,
-    val cardNumber: String,
-    val invoice: Invoice
+    val ID: String, val cardType: String, val cardNumber: String, val invoice: Invoice
 )
 
 interface Pay {
-    fun payAmount(payAmount: Double, pinNumber: String)
+    fun payAmount(payAmount: Double, pinNumber: String): String
 }
 
 class CardPayment(
-    ID: Int,
-    cardType: String,
-    cardNumber: String,
-    invoice: Invoice
-) :
-    Payment(
-        ID,
-        cardType,
-        cardNumber,
-        invoice
-    ), Pay {
+    ID: String, cardType: String, cardNumber: String, invoice: Invoice
+) : Payment(
+    ID, cardType, cardNumber, invoice
+), Pay {
 
 
-    override fun payAmount(payAmount: Double, pinNumber: String) {
-        if (pinNumber == cardNumber)
-            if (invoice.getTotal() == payAmount) {
-                println("Successful $payAmount payed")
-            } else if (invoice.getTotal() > payAmount) {
-                var balanceAmount = invoice.getTotal() - payAmount
-                println("Payed Amount : $payAmount Balance Amount: $balanceAmount ")
-            } else {
-                println("Insufficient Balance your account")
-            }
-
+    override fun payAmount(payAmount: Double, pinNumber: String): String {
+        var name = ""
+        print("Enter Coupon Number: ")
+        val getCoupon: String? = readLine()
+        val total = invoice.applyCoupon(getCoupon)
+        println("Total: $total")
+        if (pinNumber == cardNumber) if (total == payAmount) {
+            name = "Successful $payAmount payed"
+        } else if (total > payAmount && payAmount >= 1) {
+            val balanceAmount = total - payAmount
+            name = "Payed Amount : $payAmount Balance Amount: $balanceAmount "
+        } else {
+            name = "Insufficient Balance your account"
+        }
+        return name
     }
 
 
 }
 
 class UPIPayment(
-    ID: Int,
-    cardType: String,
-    cardNumber: String,
-    invoice: Invoice
+    ID: String, cardType: String, cardNumber: String, invoice: Invoice
 ) : Payment(
-    ID,
-    cardType,
-    cardNumber,
-    invoice
+    ID, cardType, cardNumber, invoice
 ), Pay {
 
-    override fun payAmount(payAmount: Double, pinNumber: String) {
-        if (pinNumber == cardNumber)
-            if (invoice.getTotal() == payAmount) {
-                println("Successful $payAmount payed")
-            } else if (invoice.getTotal() > payAmount) {
-                var balanceAmount = invoice.getTotal() - payAmount
-                println("Payed Amount : $payAmount Balance Amount: $balanceAmount ")
-            } else {
-                println("Insufficient Balance your account")
-            }
+    override fun payAmount(payAmount: Double, pinNumber: String): String {
+        var name = ""
+        print("Enter Coupon Number: ")
+        val getCoupon: String? = readLine()
+        val total = invoice.applyCoupon(getCoupon)
+        println("Total: $total")
+        if (pinNumber == cardNumber) if (total == payAmount) {
+            name = "Successful $payAmount payed"
+        } else if (total > payAmount) {
+            val balanceAmount = total - payAmount
+            name = "Payed Amount : $payAmount Balance Amount: $balanceAmount "
+        } else {
+            name = "Insufficient Balance your account"
+        }
+        return name
     }
 
 }

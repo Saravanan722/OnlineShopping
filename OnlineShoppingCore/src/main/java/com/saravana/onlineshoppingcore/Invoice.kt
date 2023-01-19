@@ -17,8 +17,7 @@ class Invoice(
 
     fun applyCoupon(coupon: String?): Double {
         var discount = 0.0
-        if (coupon == "TAMIL120")
-            discount = getTotal() * 0.1
+        if (coupon == "TAMIL120") discount = getTotal() * 0.01
         return getTotal() - discount
     }
 }

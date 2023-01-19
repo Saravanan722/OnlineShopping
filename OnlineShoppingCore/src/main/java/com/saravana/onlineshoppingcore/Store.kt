@@ -1,28 +1,30 @@
 package com.saravana.onlineshoppingcore
 
-class Store {
+object Store {
     private val items = mutableListOf<Product>()
-    private val register = mutableListOf<Customer>()
 
-    fun addItems(product: Product) {
+    fun addItem(product: Product) {
         items.add(product)
     }
 
+    fun addItem(vararg products: Product) {
+        products.forEach { items.add(it) }
+    }
+
     fun deleteProduct(product: Product): String {
-        if (items.remove(product)) {
-            return " Removed item $product"
+        return if (items.remove(product)) {
+            " Removed item $product"
         } else {
-            return "Does not have this item $product"
+            "Does not have this item $product"
         }
     }
 
-    fun showItem() {
-        items.forEach { println(it.name) }
+    fun getStoreItem(): List<Product> {
+        return items
     }
 
-    fun searchItems(searchItem: String): List<Product> {
-        val pattern = searchItem.toRegex(RegexOption.IGNORE_CASE)
-        return items.filter { pattern.containsMatchIn(it.name) }
+    fun searchItem(product: String): Product? {
+        return items.find { it.name == product }
     }
 
     fun filterStoreItem(
@@ -47,8 +49,15 @@ class Store {
         return filter
     }
 
+    fun clearAll() {
+        items.clear()
+    }
+
+    fun getProductCount(): Int {
+        return items.size
+    }
 }
 
 
-//filter price, name
-//Category
+
+

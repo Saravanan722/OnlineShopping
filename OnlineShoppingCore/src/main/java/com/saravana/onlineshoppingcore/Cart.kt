@@ -1,51 +1,39 @@
 package com.saravana.onlineshoppingcore
 
+
 data class CartItem(
-    val product: Product,
-    var quantity: Int
+    val product: Product, var quantity: Int
 )
 
 class Cart {
-    private val cartItems = mutableListOf<CartItem>()
+    private val cartItem = mutableListOf<CartItem>()
+
 
     fun addCart(product: Product, quantity: Int) {
-        cartItems.add(
+        cartItem.add(
             CartItem(
-                product,
-                quantity
+                product, quantity
             )
         )
     }
 
-    fun deleteCartItem(product: Product) {
-        val deleteItem = cartItems.listIterator()
-        while (deleteItem.hasNext()) {
-            if (deleteItem.next().product == product)
-                deleteItem.remove()
-        }
-        println("Removed item: $product")
+    fun removeCartItem(position: Int): Int {
+        cartItem.removeAt(position)
+        return position
     }
 
-    fun searchCartItems(searchItem: String): List<CartItem> {
-        val pattern = searchItem.toRegex(RegexOption.IGNORE_CASE)
-        return cartItems.filter { pattern.containsMatchIn(it.product.name) }
+    fun getCartItem(product: String): CartItem? {
+        return cartItem.find { it.product.name == product }
+
     }
 
     fun changeQuantity(productId: Int, quantity: Int) {
-        val toBeQuantityChangeItem = cartItems.find { it.product.ID == productId }
+        val toBeQuantityChangeItem = cartItem.find { it.product.ID == productId }
         toBeQuantityChangeItem?.let { it.quantity = quantity }
     }
 
-    fun viewCartItem() {
-        cartItems.forEach {
-            println(
-                " ID: ${it.product.ID} :" +
-                        " Name: ${it.product.name}:   " + "Price: ${it.product.price}:   " +
-                        "Tax: ${it.product.tax}:   " +
-                        "Discount: ${it.product.discount}:    " +
-                        "Quantity: ${it.quantity}:    "
-            )
-        }
+    fun getCartItem(): List<CartItem> {
+        return cartItem
     }
 
     fun filterCartItem(
@@ -57,33 +45,33 @@ class Cart {
     ): List<CartItem> {
 
         val filter = when {
-            startPrice != endPrice -> cartItems.filter { it.product.price in startPrice!!..endPrice!! }
+            startPrice != endPrice -> cartItem.filter { it.product.price in startPrice!!..endPrice!! }
 
-            filterStartLetter != null -> cartItems.filter {
+            filterStartLetter != null -> cartItem.filter {
                 it.product.name.startsWith(filterStartLetter.uppercase())
             }
-            filterEndLetter != null -> cartItems.filter {
+            filterEndLetter != null -> cartItem.filter {
                 it.product.name.endsWith(filterEndLetter)
             }
-            filterName != null -> cartItems.sortedBy { it.product.name }
-            else -> cartItems.sortedBy { it.product.price }
+            filterName != null -> cartItem.sortedBy { it.product.name }
+            else -> cartItem.sortedBy { it.product.price }
 
         }
         return filter
     }
 
     fun clearAll() {
+        cartItem.clear()
     }
 
     fun getProductCount(): Int {
-        return cartItems.size
+        return cartItem.size
+    }
+
+    fun savedForLater(product: Product) {
+
+        Store.addItem(product)
     }
 }
 
 
-// Collection
-// Getter/Setter
-// SOLID -> S
-// Why Readability is most important then other
-// Signed vs Unsigned
-// filter

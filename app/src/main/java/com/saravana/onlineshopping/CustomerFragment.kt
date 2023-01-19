@@ -5,14 +5,15 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.navigation.fragment.findNavController
 import com.saravana.onlineshopping.databinding.FragmentSecondBinding
-import com.saravana.onlineshoppingcore.Cart
+import com.saravana.onlineshoppingcore.Admin
+import com.saravana.onlineshoppingcore.Store
 
 /**
  * A simple [Fragment] subclass as the second destination in the navigation.
  */
-class SecondFragment : Fragment() {
+class CustomerFragment : Fragment() {
+    private val admin = Admin()
 
     private var _binding: FragmentSecondBinding? = null
 
@@ -31,11 +32,8 @@ class SecondFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
+        admin.addStore()
 
-//        binding.buttonSecond.setOnClickListener {
-//            findNavController().navigate(R.id.action_SecondFragment_to_FirstFragment)
-//        }
     }
 
     override fun onDestroyView() {
