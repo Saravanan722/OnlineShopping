@@ -62,16 +62,9 @@ class Admin {
     fun searchStoreProduct(product: String) {
         println(Store.searchItem(product))
     }
+
+    
 }
 
-/*
-fun main() {
-    val admin = Admin()
-    admin.addStore()
-    Store.getStoreItem().forEach(::println)
-    admin.searchStoreProduct("Hero Pen")
-    admin.deleteStoreProduct()
-    Store.getStoreItem().forEach(::println)
 
 
-}*/
