@@ -1,13 +1,12 @@
 package com.saravana.onlineshopping
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.saravana.onlineshopping.databinding.FragmentSecondBinding
+import androidx.fragment.app.Fragment
+import com.saravana.onlineshopping.databinding.FragmentCustomerBinding
 import com.saravana.onlineshoppingcore.Admin
-import com.saravana.onlineshoppingcore.Store
 
 /**
  * A simple [Fragment] subclass as the second destination in the navigation.
@@ -15,7 +14,7 @@ import com.saravana.onlineshoppingcore.Store
 class CustomerFragment : Fragment() {
     private val admin = Admin()
 
-    private var _binding: FragmentSecondBinding? = null
+    private var _binding: FragmentCustomerBinding? = null
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -26,7 +25,7 @@ class CustomerFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        _binding = FragmentSecondBinding.inflate(inflater, container, false)
+        _binding = FragmentCustomerBinding.inflate(inflater, container, false)
         return binding.root
 
     }
