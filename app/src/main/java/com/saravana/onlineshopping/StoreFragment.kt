@@ -5,7 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.saravana.onlineshopping.databinding.FragmentFirstBinding
+import com.saravana.onlineshopping.databinding.FragmentStoreBinding
 import com.saravana.onlineshoppingcore.Store
 
 /**
@@ -13,7 +13,7 @@ import com.saravana.onlineshoppingcore.Store
  */
 class StoreFragment : Fragment() {
 
-    private var _binding: FragmentFirstBinding? = null
+    private var _binding: FragmentStoreBinding? = null
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -24,7 +24,7 @@ class StoreFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        _binding = FragmentFirstBinding.inflate(inflater, container, false)
+        _binding = FragmentStoreBinding.inflate(inflater, container, false)
         return binding.root
     }
 
