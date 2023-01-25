@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.saravana.onlineshopping.databinding.StoreItemBinding
 import com.saravana.onlineshoppingcore.Store
 
-class StoreAdapter() : RecyclerView.Adapter<StoreAdapter.StoreViewHolder>() {
+class StoreAdapter : RecyclerView.Adapter<StoreAdapter.StoreViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): StoreViewHolder {
         val binding = StoreItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return StoreViewHolder(binding)
@@ -21,7 +21,7 @@ class StoreAdapter() : RecyclerView.Adapter<StoreAdapter.StoreViewHolder>() {
     inner class StoreViewHolder(private val binding: StoreItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind() {
-            binding.storeItemNameTextView.text = "Saravanan T"
+            binding.storeItemNameTextView.text = Store.getStoreItem().toString()
         }
     }
 }
