@@ -13,11 +13,11 @@ import com.saravana.onlineshoppingcore.Cart
 import com.saravana.onlineshoppingcore.CartItem
 import com.saravana.onlineshoppingcore.Product
 import com.saravana.onlineshoppingcore.Store
+import java.text.ParsePosition
 
 class CartFragment : Fragment() {
 
     private val cart = Cart()
-
 
     private lateinit var recyclerView: RecyclerView
     private var _binding: FragmentCartBinding? = null
@@ -44,7 +44,7 @@ class CartFragment : Fragment() {
         recyclerView.adapter = adapter
         adapter.setOnClickListener(object : CartAdapter.OnItemClickListener {
             override fun onItemClick(position: Int) {
-                Toast.makeText(requireContext(), "Clicked $position", Toast.LENGTH_SHORT).show()
+                Toast.makeText(requireContext(), "Clicked", Toast.LENGTH_SHORT).show()
             }
         })
     }

@@ -22,7 +22,7 @@ class Cart {
         return position
     }
 
-    fun getCartItem(product: String): CartItem? {
+    fun searchCartItem(product: String): CartItem? {
         return cartItem.find { it.product.name == product }
 
     }
