@@ -26,7 +26,6 @@ class StoreFragment : Fragment() {
 
         _binding = FragmentFirstBinding.inflate(inflater, container, false)
         return binding.root
-
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -34,8 +33,6 @@ class StoreFragment : Fragment() {
         Store.getStoreItem()
         Store.searchItem("Apple")
         Store.getProductCount()
-
-
     }
 
     override fun onDestroyView() {

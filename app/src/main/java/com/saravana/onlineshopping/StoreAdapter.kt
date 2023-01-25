@@ -1,24 +1,27 @@
 package com.saravana.onlineshopping
 
-import android.view.View
+import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.saravana.onlineshopping.databinding.StoreItemBinding
+import com.saravana.onlineshoppingcore.Store
 
-class StoreAdapter : RecyclerView.Adapter<StoreAdapter.StoreViewHolder>() {
-
-    inner class StoreViewHolder(view: View): RecyclerView.ViewHolder(view) {
-
-    }
-
+class StoreAdapter() : RecyclerView.Adapter<StoreAdapter.StoreViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): StoreViewHolder {
-        TODO("Not yet implemented")
+        val binding = StoreItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        return StoreViewHolder(binding)
     }
 
-    override fun getItemCount(): Int {
-        TODO("Not yet implemented")
-    }
+    override fun getItemCount(): Int = Store.getProductCount()
 
     override fun onBindViewHolder(holder: StoreViewHolder, position: Int) {
-        TODO("Not yet implemented")
+        holder.bind()
+    }
+
+    inner class StoreViewHolder(private val binding: StoreItemBinding) :
+        RecyclerView.ViewHolder(binding.root) {
+        fun bind() {
+            binding.storeItemNameTextView.text = "Saravanan T"
+        }
     }
 }
