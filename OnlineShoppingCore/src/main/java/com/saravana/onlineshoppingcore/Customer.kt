@@ -15,20 +15,7 @@ class Customer(
     fun getCartItem() {
 
     }
-
 }
 
-//fun main() {
-//    var customer = Customer(
-//        name = "Jack",
-//        phoneNumber = "1234567890",
-//        email = "tamil@gmail.com",
-//    )
-//
-//
-//
-//    Store.getStoreItem().forEach(::println)
-//
-//
-//}
+
 

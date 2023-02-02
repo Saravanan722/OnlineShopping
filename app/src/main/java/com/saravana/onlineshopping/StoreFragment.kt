@@ -11,9 +11,6 @@ import androidx.recyclerview.widget.RecyclerView.LayoutManager
 import com.saravana.onlineshopping.databinding.FragmentStoreBinding
 import com.saravana.onlineshoppingcore.Store
 
-/**
- * A simple [Fragment] subclass as the default destination in the navigation.
- */
 class StoreFragment : Fragment() {
 
     private var _binding: FragmentStoreBinding? = null

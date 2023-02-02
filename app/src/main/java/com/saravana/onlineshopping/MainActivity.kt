@@ -28,6 +28,7 @@ class MainActivity : AppCompatActivity() {
         appBarConfiguration = AppBarConfiguration(navController.graph)
         setupActionBarWithNavController(navController, appBarConfiguration)
 
+            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
 
     }
 
