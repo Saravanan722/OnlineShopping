@@ -24,12 +24,15 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val navController = findNavController(R.id.nav_host_fragment_content_main)
-        appBarConfiguration = AppBarConfiguration(navController.graph)
-        setupActionBarWithNavController(navController, appBarConfiguration)
+//        val navController = findNavController(R.id.nav_host_fragment_content_main)
+//        appBarConfiguration = AppBarConfiguration(navController.graph)
+//        setupActionBarWithNavController(navController, appBarConfiguration)
 
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+          //  Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
 
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.fragment_container_view, CartFragment())
+            .commit()
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
