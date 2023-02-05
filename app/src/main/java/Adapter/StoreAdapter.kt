@@ -1,8 +1,10 @@
-package com.saravana.onlineshopping
+package Adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.saravana.onlineshopping.R
 import com.saravana.onlineshopping.databinding.StoreItemBinding
 import com.saravana.onlineshoppingcore.Store
 
@@ -21,7 +23,11 @@ class StoreAdapter : RecyclerView.Adapter<StoreAdapter.StoreViewHolder>() {
     inner class StoreViewHolder(private val binding: StoreItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind() {
-            binding.storeItemNameTextView.text = Store.getStoreItem().toString()
+            binding.storeItemNameTextView.text = "Hi product"
+            binding.storeItemImageView
+            binding.storeItemPriceView
+            binding.storeItemQuantityView
+            binding.storeItemDiscountView
         }
     }
 }

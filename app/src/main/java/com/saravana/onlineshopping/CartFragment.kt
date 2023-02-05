@@ -1,5 +1,6 @@
 package com.saravana.onlineshopping
 
+import Adapter.CartAdapter
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -10,10 +11,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.saravana.onlineshopping.databinding.FragmentCartBinding
 import com.saravana.onlineshoppingcore.Cart
-import com.saravana.onlineshoppingcore.CartItem
 import com.saravana.onlineshoppingcore.Product
-import com.saravana.onlineshoppingcore.Store
-import java.text.ParsePosition
 
 class CartFragment : Fragment() {
 

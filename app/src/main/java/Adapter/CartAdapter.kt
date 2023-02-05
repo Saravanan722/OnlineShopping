@@ -1,15 +1,13 @@
-package com.saravana.onlineshopping
+package Adapter
 
 import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toast
-import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.recyclerview.widget.RecyclerView
+import com.saravana.onlineshopping.R
 import com.saravana.onlineshoppingcore.CartItem
 
 class CartAdapter(val cartItem: List<CartItem>) :

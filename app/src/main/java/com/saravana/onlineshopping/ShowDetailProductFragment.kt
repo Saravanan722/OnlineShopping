@@ -5,16 +5,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.saravana.onlineshopping.databinding.FragmentCustomerBinding
-import com.saravana.onlineshoppingcore.Admin
+import com.saravana.onlineshopping.databinding.FragmentShowDetailProductBinding
 
 /**
  * A simple [Fragment] subclass as the second destination in the navigation.
  */
-class CustomerFragment : Fragment() {
-    private val admin = Admin()
+class ShowDetailProductFragment : Fragment() {
 
-    private var _binding: FragmentCustomerBinding? = null
+    private var _binding: FragmentShowDetailProductBinding? = null
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -25,13 +23,12 @@ class CustomerFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        _binding = FragmentCustomerBinding.inflate(inflater, container, false)
+        _binding = FragmentShowDetailProductBinding.inflate(inflater, container, false)
         return binding.root
 
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        admin.addStore()
 
     }
 
