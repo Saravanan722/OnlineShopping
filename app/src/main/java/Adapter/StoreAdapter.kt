@@ -23,11 +23,11 @@ class StoreAdapter : RecyclerView.Adapter<StoreAdapter.StoreViewHolder>() {
     inner class StoreViewHolder(private val binding: StoreItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind() {
-            binding.storeItemNameTextView.text = "Hi product"
-            binding.storeItemImageView
-            binding.storeItemPriceView
-            binding.storeItemQuantityView
-            binding.storeItemDiscountView
+//            binding.storeItemNameTextView
+//            binding.storeItemImageView
+//            binding.storeItemPriceView
+//            binding.storeItemQuantityView
+//            binding.storeItemDiscountView
         }
     }
 }

@@ -29,6 +29,7 @@ class CartFragment : Fragment() {
     ): View? {
         _binding = FragmentCartBinding.inflate(inflater, container, false)
         return binding.root
+
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -60,5 +61,4 @@ class CartFragment : Fragment() {
         super.onDestroyView()
         _binding = null
     }
-
 }
