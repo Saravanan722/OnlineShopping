@@ -2,12 +2,11 @@ package Adapter
 
 import android.annotation.SuppressLint
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.saravana.onlineshopping.R
+import com.saravana.onlineshopping.databinding.ItemViewBinding
 import com.saravana.onlineshoppingcore.CartItem
 
 class CartAdapter(val cartItem: List<CartItem>) :
@@ -24,15 +23,32 @@ class CartAdapter(val cartItem: List<CartItem>) :
         mListener = listener
     }
 
-    inner class CartViewHolder(view: View, listener: OnItemClickListener) :
-        RecyclerView.ViewHolder(view) {
-        private val productQuantity: TextView = itemView.findViewById(R.id.product_quantity)
-        private val productName: TextView = itemView.findViewById(R.id.product_name)
-        private val imageView: ImageView = itemView.findViewById(R.id.product_image)
-        private val productPrice: TextView = itemView.findViewById(R.id.product_price)
-        private val productDiscount: TextView = itemView.findViewById(R.id.product_discount)
-        private val productRemove: TextView = itemView.findViewById(R.id.product_removed)
-        private val productSaveForLater: TextView = itemView.findViewById(R.id.saved_for_later)
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CartViewHolder {
+        val binding = ItemViewBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+
+        return CartViewHolder(binding, mListener)
+    }
+
+    override fun getItemCount(): Int {
+        return cartItem.size
+    }
+
+    override fun onBindViewHolder(holder: CartViewHolder, position: Int) {
+        val item = cartItem[position]
+        holder.bind(item)
+
+
+    }
+
+    inner class CartViewHolder(binding: ItemViewBinding, listener: OnItemClickListener) :
+        RecyclerView.ViewHolder(binding.root) {
+        private val productQuantity: TextView = binding.productQuantity
+        private val productName: TextView = binding.productName
+        private val imageView: ImageView = binding.productImage
+        private val productPrice: TextView = binding.productPrice
+        private val productDiscount: TextView = binding.productDiscount
+        private val productRemove: TextView = binding.productRemoved
+        private val productSaveForLater: TextView = binding.savedForLater
 
 
         private var currentItem: CartItem? = null
@@ -57,27 +73,11 @@ class CartAdapter(val cartItem: List<CartItem>) :
             productPrice.text = "$${cartItem.product.price}"
             productDiscount.text = "% ${cartItem.product.discount}"
 
+
         }
 
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CartViewHolder {
-        val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.item_view, parent, false)
-
-        return CartViewHolder(view, mListener)
-    }
-
-    override fun getItemCount(): Int {
-        return cartItem.size
-    }
-
-    override fun onBindViewHolder(holder: CartViewHolder, position: Int) {
-        val item = cartItem[position]
-        holder.bind(item)
-
-
-    }
 
 }
 

@@ -2,27 +2,27 @@ package com.saravana.onlineshopping
 
 import Adapter.StoreAdapter
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.saravana.onlineshopping.databinding.FragmentStoreBinding
-import com.saravana.onlineshoppingcore.Admin
+import com.saravana.onlineshoppingcore.Product
+import com.saravana.onlineshoppingcore.Store
 
 class StoreFragment : Fragment() {
 
     private var _binding: FragmentStoreBinding? = null
     private lateinit var recyclerView: RecyclerView
-    private val admin = Admin()
 
     // This property is only valid between onCreateView and
     // onDestroyView.
     private val binding get() = _binding!!
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View? {
 
         _binding = FragmentStoreBinding.inflate(inflater, container, false)
@@ -31,10 +31,16 @@ class StoreFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        admin.addStore()
+        binding.root
+        val apple = Product(
+            ID = 1, name = "Apple", price = 10.0, discount = 0.0, tax = 1.0
+        )
         recyclerView = binding.recyclerStoreView
-        binding.recyclerStoreView.layoutManager = binding.recyclerStoreView.layoutManager
-        val adapter = StoreAdapter()
+        recyclerView.layoutManager = LinearLayoutManager(requireContext())
+        val adapter = StoreAdapter(storeItem = Store.getStoreItem())
+        recyclerView.adapter = adapter
+
+
         recyclerView.adapter = adapter
 
     }

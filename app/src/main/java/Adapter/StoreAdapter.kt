@@ -2,13 +2,14 @@ package Adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.saravana.onlineshopping.R
 import com.saravana.onlineshopping.databinding.StoreItemBinding
+import com.saravana.onlineshoppingcore.Product
 import com.saravana.onlineshoppingcore.Store
 
-class StoreAdapter : RecyclerView.Adapter<StoreAdapter.StoreViewHolder>() {
+class StoreAdapter(val storeItem:List<Product>) : RecyclerView.Adapter<StoreAdapter.StoreViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): StoreViewHolder {
         val binding = StoreItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return StoreViewHolder(binding)
@@ -17,17 +18,23 @@ class StoreAdapter : RecyclerView.Adapter<StoreAdapter.StoreViewHolder>() {
     override fun getItemCount(): Int = Store.getProductCount()
 
     override fun onBindViewHolder(holder: StoreViewHolder, position: Int) {
-        holder.bind()
+        val product = storeItem[position]
+        holder.bind(product)
     }
 
-    inner class StoreViewHolder(private val binding: StoreItemBinding) :
+    inner class StoreViewHolder(binding: StoreItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        fun bind() {
-//            binding.storeItemNameTextView
-//            binding.storeItemImageView
-//            binding.storeItemPriceView
-//            binding.storeItemQuantityView
-//            binding.storeItemDiscountView
+        private val storeItemNameTextView:TextView = binding.storeItemNameTextView
+        private val storeItemImageView:ImageView = binding.storeItemImageView
+        private val storeItemPriceView:TextView = binding.storeItemPriceView
+        private val storeItemDiscountView:TextView = binding.storeItemDiscountView
+        private val storeItemTax:TextView = binding.storeItemTax
+
+        fun bind(product: Product) {
+            storeItemNameTextView.text = product.name
+            storeItemPriceView.text = product.price.toString()
+            storeItemDiscountView.text =product.discount.toString()
+            storeItemTax.text = product.tax.toString()
         }
     }
 }

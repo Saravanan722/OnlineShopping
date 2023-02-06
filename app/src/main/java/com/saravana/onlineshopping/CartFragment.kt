@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -19,6 +20,7 @@ class CartFragment : Fragment() {
 
     private lateinit var recyclerView: RecyclerView
     private var _binding: FragmentCartBinding? = null
+    private lateinit var searchCartItem: TextView
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -34,16 +36,11 @@ class CartFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
+        binding.root
         cart.addCart(
             Product(
-                ID = 1,
-                name = "Books",
-                price = 3000.0,
-                discount = 0.0,
-                tax = 0.0
-            ),
-            5
+                ID = 1, name = "Books", price = 3000.0, discount = 0.0, tax = 0.0
+            ), 5
         )
 
         recyclerView = binding.recyclerView
@@ -61,4 +58,5 @@ class CartFragment : Fragment() {
         super.onDestroyView()
         _binding = null
     }
+
 }

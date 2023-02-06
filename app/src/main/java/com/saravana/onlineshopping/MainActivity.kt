@@ -1,24 +1,14 @@
 package com.saravana.onlineshopping
 
 import android.os.Bundle
-import com.google.android.material.snackbar.Snackbar
-import androidx.appcompat.app.AppCompatActivity
-import androidx.navigation.findNavController
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.navigateUp
-import androidx.navigation.ui.setupActionBarWithNavController
 import android.view.Menu
-import android.view.MenuItem
-import android.widget.Button
-import androidx.viewbinding.ViewBindings
+import androidx.appcompat.app.AppCompatActivity
 import com.saravana.onlineshopping.databinding.ActivityMainBinding
-import com.saravana.onlineshoppingcore.Admin
 
 class MainActivity : AppCompatActivity() {
 
-  //  private lateinit var appBarConfiguration: AppBarConfiguration
+    //  private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityMainBinding
-
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -32,18 +22,25 @@ class MainActivity : AppCompatActivity() {
 //        setupActionBarWithNavController(navController, appBarConfiguration)
 
         //  Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+//        binding.textView3.setOnClickListener {
+//
+//            val intent = Intent(this@MainActivity, CartFragment::class.java)
+//            startActivity(intent)
+//            supportFragmentManager.beginTransaction()
+//                .replace(R.id.fragment_container_view, CartFragment())
+//                .commit()
 
-        supportFragmentManager.beginTransaction()
-            .replace(R.id.fragment_container_view, StoreFragment())
-            .commit()
+//        supportFragmentManager.beginTransaction()
+//            .replace(R.id.fragment_container_view,StoreFragment())
+//            .commit()
 
     }
 
-//    override fun onCreateOptionsMenu(menu: Menu): Boolean {
-//        // Inflate the menu; this adds items to the action bar if it is present.
-//        menuInflater.inflate(R.menu.menu_main, menu)
-//        return true
-//    }
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        menuInflater.inflate(R.menu.menu_main, menu)
+        return true
+    }
 
 //    override fun onOptionsItemSelected(item: MenuItem): Boolean {
 //        // Handle action bar item clicks here. The action bar will
@@ -55,9 +52,4 @@ class MainActivity : AppCompatActivity() {
 //        }
 //    }
 
-//    override fun onSupportNavigateUp(): Boolean {
-//        val navController = findNavController(R.id.nav_host_fragment_content_main)
-//        return navController.navigateUp(appBarConfiguration)
-//                || super.onSupportNavigateUp()
-//    }
 }
