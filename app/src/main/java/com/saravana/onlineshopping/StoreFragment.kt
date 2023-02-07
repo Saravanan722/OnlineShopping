@@ -35,12 +35,10 @@ class StoreFragment : Fragment() {
         val apple = Product(
             ID = 1, name = "Apple", price = 10.0, discount = 0.0, tax = 1.0
         )
+        Store.addItem(apple)
         recyclerView = binding.recyclerStoreView
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
         val adapter = StoreAdapter(storeItem = Store.getStoreItem())
-        recyclerView.adapter = adapter
-
-
         recyclerView.adapter = adapter
 
     }

@@ -153,12 +153,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/delivery_charge" />
 
-    <TextView
+    <Button
         android:id="@+id/saved_for_later"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
-        android:background="@drawable/forget"
         android:text="SavedForLater"
         android:textAppearance="?attr/textAppearanceHeadline5"
         android:textSize="20sp"
@@ -166,12 +165,11 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/total_price" />
 
-    <TextView
+    <Button
         android:id="@+id/product_removed"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
-        android:background="@drawable/forget"
         android:text="Remove"
         android:textAppearance="?attr/textAppearanceHeadline5"
         android:textSize="20sp"

@@ -5,4 +5,5 @@
     <item name="store_item_quantity_view" type="id" />
     <item name="store_item_price_view" type="id" />
     <item name="store_item_discount_view" type="id" />
+    <item name="nav_host_fragment" type="id" />
 </resources>

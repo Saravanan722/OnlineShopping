@@ -20,7 +20,6 @@ class CartFragment : Fragment() {
 
     private lateinit var recyclerView: RecyclerView
     private var _binding: FragmentCartBinding? = null
-    private lateinit var searchCartItem: TextView
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -31,7 +30,6 @@ class CartFragment : Fragment() {
     ): View? {
         _binding = FragmentCartBinding.inflate(inflater, container, false)
         return binding.root
-
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -52,6 +50,7 @@ class CartFragment : Fragment() {
                 Toast.makeText(requireContext(), "Clicked", Toast.LENGTH_SHORT).show()
             }
         })
+
     }
 
     override fun onDestroyView() {

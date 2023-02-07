@@ -3,20 +3,23 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/CartFragment">
-<!--    app:startDestination="@id/StoreFragment">-->
-
-
+    app:startDestination="@id/cartFragment2">
 
     <fragment
-        android:id="@+id/CartFragment"
+        android:id="@+id/cartFragment2"
         android:name="com.saravana.onlineshopping.CartFragment"
-        android:label="@string/cart_fragment_label"
-        tools:layout="@layout/fragment_cart" />
+        android:label="CartFragment" >
+        <action
+            android:id="@+id/action_cartFragment2_to_storeFragment2"
+            app:destination="@id/storeFragment2" />
+    </fragment>
     <fragment
-        android:id="@+id/StoreFragment"
+        android:id="@+id/storeFragment2"
         android:name="com.saravana.onlineshopping.StoreFragment"
-        android:label="@string/cart_fragment_label"
-        tools:layout="@layout/fragment_store" />
-
+        android:label="fragment_store"
+        tools:layout="@layout/fragment_store" >
+        <action
+            android:id="@+id/action_storeFragment2_to_cartFragment2"
+            app:destination="@id/cartFragment2" />
+    </fragment>
 </navigation>

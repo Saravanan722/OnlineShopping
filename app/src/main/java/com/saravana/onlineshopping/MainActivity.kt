@@ -1,15 +1,20 @@
 package com.saravana.onlineshopping
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
+import android.view.MenuItem
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
+import androidx.navigation.NavController
 import com.saravana.onlineshopping.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
-    //  private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityMainBinding
 
+    private lateinit var navController: NavController
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -17,39 +22,36 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-//        val navController = findNavController(R.id.nav_host_fragment_content_main)
-//        appBarConfiguration = AppBarConfiguration(navController.graph)
-//        setupActionBarWithNavController(navController, appBarConfiguration)
 
-        //  Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-//        binding.textView3.setOnClickListener {
-//
-//            val intent = Intent(this@MainActivity, CartFragment::class.java)
-//            startActivity(intent)
-//            supportFragmentManager.beginTransaction()
-//                .replace(R.id.fragment_container_view, CartFragment())
-//                .commit()
-
-//        supportFragmentManager.beginTransaction()
-//            .replace(R.id.fragment_container_view,StoreFragment())
-//            .commit()
-
+        binding.homeButton.setOnClickListener {
+            replaceFragment(StoreFragment())
+        }
+        binding.cartButton.setOnClickListener {
+            replaceFragment(CartFragment())
+        }
     }
 
-    override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        // Inflate the menu; this adds items to the action bar if it is present.
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.menu_main, menu)
-        return true
+        return super.onCreateOptionsMenu(menu)
     }
 
-//    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-//        // Handle action bar item clicks here. The action bar will
-//        // automatically handle clicks on the Home/Up button, so long
-//        // as you specify a parent activity in AndroidManifest.xml.
-//        return when (item.itemId) {
-//            R.id.action_settings -> true
-//            else -> super.onOptionsItemSelected(item)
-//        }
-//    }
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.about -> Toast.makeText(this, "About Selected", Toast.LENGTH_SHORT).show()
+            R.id.settings -> Toast.makeText(this, "Settings Selected", Toast.LENGTH_SHORT)
+                .show()
+            R.id.exit -> Toast.makeText(this, "Exit Selected", Toast.LENGTH_SHORT).show()
+        }
+        return super.onOptionsItemSelected(item)
+    }
+
+    private fun replaceFragment(fragment: Fragment) {
+val fragmentManager = supportFragmentManager
+        val fragmentTransaction = fragmentManager.beginTransaction()
+        fragmentTransaction.replace(R.id.fragment_container,fragment)
+        fragmentTransaction.commit()
+    }
 
 }

@@ -54,6 +54,10 @@ class CartAdapter(val cartItem: List<CartItem>) :
         private var currentItem: CartItem? = null
 
         init {
+            imageView.setOnClickListener {
+                listener.onItemClick(adapterPosition)
+
+            }
             productRemove.setOnClickListener {
                 listener.onItemClick(adapterPosition)
                 productSaveForLater.setOnClickListener {
@@ -77,6 +81,7 @@ class CartAdapter(val cartItem: List<CartItem>) :
         }
 
     }
+
 
 
 }
