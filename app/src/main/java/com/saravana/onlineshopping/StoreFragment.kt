@@ -30,14 +30,14 @@ class StoreFragment : Fragment() {
 
         _binding = FragmentStoreBinding.inflate(inflater, container, false)
         return binding.root
+
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.root
 
-         admin.addStore()
-
+        admin.addStore()
 
         recyclerView = binding.recyclerStoreView
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
@@ -47,16 +47,24 @@ class StoreFragment : Fragment() {
         adapter.setOnClickListener(object : StoreAdapter.OnItemClickListener {
             override fun onStoreItemClick(position: Int) {
                 Toast.makeText(requireContext(), "clicked ", Toast.LENGTH_SHORT).show()
+                nextFragment()
             }
 
-            override fun onItemClick(position: Int) {
-
-            }
         })
+
+
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    fun nextFragment() {
+        val fragmentManager = parentFragmentManager
+        val fragmentTransaction = fragmentManager.beginTransaction()
+        fragmentTransaction.add(R.id.fragment_container, ShowDetailProductFragment())
+        fragmentTransaction.addToBackStack(null)
+        fragmentTransaction.commit()
     }
 }

@@ -1,11 +1,17 @@
 package Adapter
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.core.content.ContentProviderCompat.requireContext
+import androidx.core.content.ContextCompat.startActivity
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.saravana.onlineshopping.R
+import com.saravana.onlineshopping.ShowDetailProductFragment
+import com.saravana.onlineshopping.StoreFragment
 import com.saravana.onlineshopping.databinding.StoreItemBinding
 import com.saravana.onlineshoppingcore.Product
 import com.saravana.onlineshoppingcore.Store
@@ -15,7 +21,7 @@ class StoreAdapter(val storeItem: List<Product>) :
     RecyclerView.Adapter<StoreAdapter.StoreViewHolder>() {
     private lateinit var mListener: StoreAdapter.OnItemClickListener
 
-    interface OnItemClickListener : CartAdapter.OnItemClickListener {
+    interface OnItemClickListener {
         fun onStoreItemClick(position: Int)
 
     }
@@ -34,6 +40,8 @@ class StoreAdapter(val storeItem: List<Product>) :
     override fun onBindViewHolder(holder: StoreViewHolder, position: Int) {
         val product = storeItem[position]
         holder.bind(product)
+
+
     }
 
     inner class StoreViewHolder(binding: StoreItemBinding, listener: OnItemClickListener) :
@@ -60,4 +68,5 @@ class StoreAdapter(val storeItem: List<Product>) :
     }
 
 }
+
 

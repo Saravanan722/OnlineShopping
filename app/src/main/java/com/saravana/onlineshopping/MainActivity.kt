@@ -29,7 +29,6 @@ class MainActivity : AppCompatActivity() {
         binding.cartButton.setOnClickListener {
             replaceFragment(CartFragment())
         }
-
     }
 
 
@@ -49,9 +48,9 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun replaceFragment(fragment: Fragment) {
-val fragmentManager = supportFragmentManager
+        val fragmentManager = supportFragmentManager
         val fragmentTransaction = fragmentManager.beginTransaction()
-        fragmentTransaction.replace(R.id.fragment_container,fragment)
+        fragmentTransaction.replace(R.id.fragment_container, fragment)
         fragmentTransaction.commit()
     }
 

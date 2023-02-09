@@ -1,113 +1,103 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".ShowDetailProductFragment">
 
-    <ScrollView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <TextView
+            android:id="@+id/title_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
+            android:text="Apple"
+            android:textAlignment="center"
+            android:textColor="#000"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/price_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="$"
+            android:textAlignment="center"
+            android:textColor="#FF5722"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/image_view"
+            android:layout_width="wrap_content"
+            android:layout_height="300dp"
+            android:layout_gravity="center"
+            android:src="@drawable/apple" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="10dp">
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/quantity_decrement"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:src="@drawable/baseline_minimize" />
 
             <TextView
-                android:id="@+id/title_text"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="60dp"
-                android:text="Apple"
-                android:textAlignment="center"
-                android:textColor="#000"
-                android:textSize="30sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/price_text"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:id="@+id/quantity_text"
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
                 android:layout_marginTop="10dp"
-                android:text="$"
+                android:text="1"
                 android:textAlignment="center"
                 android:textColor="#FF5722"
                 android:textSize="30sp"
                 android:textStyle="bold" />
 
-            <ImageView
-                android:id="@+id/image_view"
+            <ImageButton
+                android:id="@+id/quantity_increment"
                 android:layout_width="wrap_content"
-                android:layout_height="300dp"
+                android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:src="@drawable/apple" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <ImageButton
-                    android:id="@+id/quantity_decrement"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:src="@drawable/baseline_minimize"/>
-
-                <TextView
-                    android:id="@+id/quantity_text"
-                    android:layout_width="wrap_content"
-                    android:layout_height="60dp"
-                    android:layout_marginTop="10dp"
-                    android:text="1"
-                    android:textAlignment="center"
-                    android:textColor="#FF5722"
-                    android:textSize="30sp"
-                    android:textStyle="bold" />
-
-                <ImageButton
-                    android:id="@+id/quantity_increment"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:src="@drawable/baseline_plus_one" />
-            </LinearLayout>
-
-            <TextView
-                android:id="@+id/Description_text"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:text="Description"
-                android:textAlignment="textStart"
-                android:textColor="#AC9F9B"
-                android:textSize="30sp"
-                android:textStyle="bold" />
-
-
+                android:src="@drawable/baseline_plus_one" />
         </LinearLayout>
 
-    </ScrollView>
+        <TextView
+            android:id="@+id/Description_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="DescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionv"
+            android:textAlignment="textStart"
+            android:textColor="#AC9F9B"
+            android:textSize="30sp"
+            android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/text_view"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:background="@drawable/forget"
-        android:text="add to cart"
-        android:textAlignment="center"
-        android:textColor="#FF5722"
-        android:textSize="30sp"
-        android:textStyle="bold"
-      android:paddingLeft="10dp"
-        android:paddingRight="10dp"
-        android:layout_marginBottom="5dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        <TextView
+            android:id="@+id/text_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="5dp"
+            android:background="@drawable/forget"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:text="add to cart"
+            android:textAlignment="center"
+            android:textColor="#FF5722"
+            android:textSize="30sp"
+            android:textStyle="bold" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+
+</ScrollView>
