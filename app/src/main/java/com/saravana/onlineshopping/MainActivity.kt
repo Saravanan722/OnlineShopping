@@ -1,6 +1,5 @@
 package com.saravana.onlineshopping
 
-import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
@@ -13,6 +12,7 @@ import com.saravana.onlineshopping.databinding.ActivityMainBinding
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
+
 
     private lateinit var navController: NavController
 
@@ -29,6 +29,7 @@ class MainActivity : AppCompatActivity() {
         binding.cartButton.setOnClickListener {
             replaceFragment(CartFragment())
         }
+
     }
 
 
@@ -53,5 +54,6 @@ val fragmentManager = supportFragmentManager
         fragmentTransaction.replace(R.id.fragment_container,fragment)
         fragmentTransaction.commit()
     }
+
 
 }

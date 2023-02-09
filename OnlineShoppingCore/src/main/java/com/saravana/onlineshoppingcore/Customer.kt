@@ -12,9 +12,7 @@ class Customer(
     var phoneNumber: String,
     var email: String,
 ) {
-    fun getCartItem() {
 
-    }
 }
 
 

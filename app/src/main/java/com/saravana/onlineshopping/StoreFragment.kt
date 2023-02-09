@@ -1,19 +1,22 @@
 package com.saravana.onlineshopping
 
 import Adapter.StoreAdapter
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.saravana.onlineshopping.databinding.FragmentStoreBinding
+import com.saravana.onlineshoppingcore.Admin
 import com.saravana.onlineshoppingcore.Product
 import com.saravana.onlineshoppingcore.Store
 
 class StoreFragment : Fragment() {
-
+    private val admin = Admin()
     private var _binding: FragmentStoreBinding? = null
     private lateinit var recyclerView: RecyclerView
 
@@ -32,15 +35,24 @@ class StoreFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.root
-        val apple = Product(
-            ID = 1, name = "Apple", price = 10.0, discount = 0.0, tax = 1.0
-        )
-        Store.addItem(apple)
+
+         admin.addStore()
+
+
         recyclerView = binding.recyclerStoreView
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
         val adapter = StoreAdapter(storeItem = Store.getStoreItem())
         recyclerView.adapter = adapter
 
+        adapter.setOnClickListener(object : StoreAdapter.OnItemClickListener {
+            override fun onStoreItemClick(position: Int) {
+                Toast.makeText(requireContext(), "clicked ", Toast.LENGTH_SHORT).show()
+            }
+
+            override fun onItemClick(position: Int) {
+
+            }
+        })
     }
 
     override fun onDestroyView() {
