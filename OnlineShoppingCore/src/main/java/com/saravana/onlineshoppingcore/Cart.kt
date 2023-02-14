@@ -64,7 +64,7 @@ class Cart {
         cartItem.clear()
     }
 
-    fun getProductCount(): Int {
+    fun getCartCount(): Int {
         return cartItem.size
     }
 
