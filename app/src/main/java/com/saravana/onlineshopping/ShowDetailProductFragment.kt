@@ -6,11 +6,16 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.saravana.onlineshopping.databinding.FragmentShowDetailProductBinding
+import com.saravana.onlineshoppingcore.Admin
+import com.saravana.onlineshoppingcore.Cart
+import com.saravana.onlineshoppingcore.Product
 
 /**
  * A simple [Fragment] subclass as the second destination in the navigation.
  */
 class ShowDetailProductFragment : Fragment() {
+    private val cart = Cart()
+    private val admin =Admin()
 
     private var _binding: FragmentShowDetailProductBinding? = null
 
@@ -28,10 +33,17 @@ class ShowDetailProductFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        binding.addToCart.setOnClickListener {
+          val item = admin.copyProduct()
+            cart.addCart(item,5)
+        }
+
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
     }
+
+
 }

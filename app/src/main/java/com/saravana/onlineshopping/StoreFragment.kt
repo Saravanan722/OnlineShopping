@@ -39,6 +39,7 @@ class StoreFragment : Fragment() {
 
         admin.addStore()
 
+
         recyclerView = binding.recyclerStoreView
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
         val adapter = StoreAdapter(storeItem = Store.getStoreItem())

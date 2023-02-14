@@ -23,7 +23,9 @@ class Admin {
     )
 
     private val apple = Product(
-        ID = 6, name = "Apple", price = 100.0, discount = 10.0, tax = 5.0
+        ID = 6, name = "Apple", price = 100.0, discount = 10.0, tax = 5.0, description = "Eating one medium apple a day may help lower blood pressure, cholesterol, and inflammation all of which support a healthy heart. " +
+                "Eat the peel when you can as the fiber and polyphenols found in the peel benefit heart health. " +
+                "Apples can strengthen your lungs"
     )
     private val papper = Product(
         ID = 7, name = "Apple", price = 100.0, discount = 10.0, tax = 5.0
@@ -52,7 +54,7 @@ class Admin {
     }
 
     fun getStoreProductCount() {
-        println(Store.getProductCount())
+        Store.getProductCount()
     }
 
     fun filterStoreProduct() {
@@ -60,10 +62,10 @@ class Admin {
     }
 
     fun searchStoreProduct(product: String) {
-        println(Store.searchItem(product))
+        Store.searchItem(product)
     }
 
-    
+    fun copyProduct() = Store.copyProduct(apple)
 }
 
 

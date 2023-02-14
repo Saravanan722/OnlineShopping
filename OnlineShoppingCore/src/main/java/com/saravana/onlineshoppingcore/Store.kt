@@ -56,7 +56,21 @@ object Store {
     fun getProductCount(): Int {
         return items.size
     }
+
+    fun copyProduct(product: Product):Product{
+
+        val copyItem = Product()
+        copyItem.ID = product.ID
+        copyItem.name = product.name
+        copyItem.tax = product.tax
+        copyItem.price = product.price
+        copyItem.description = product.description
+        copyItem.discount = product.discount
+        return copyItem
+
+    }
 }
+
 
 
 
