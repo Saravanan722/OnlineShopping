@@ -34,8 +34,7 @@ class ShowDetailProductFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         binding.addToCart.setOnClickListener {
-          val item = admin.copyProduct()
-            cart.addCart(item,5)
+
         }
 
     }

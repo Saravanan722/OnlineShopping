@@ -2,7 +2,7 @@ package com.saravana.onlineshoppingcore
 
 
 data class CartItem(
-    val product: Product, var quantity: Int
+    val product: Product, var quantity: Int = 0
 )
 
 class Cart {

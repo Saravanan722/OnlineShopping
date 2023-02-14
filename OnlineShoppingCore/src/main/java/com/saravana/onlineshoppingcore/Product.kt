@@ -1,6 +1,5 @@
 package com.saravana.onlineshoppingcore
-
-class Product(
+ class Product(
     var ID: Int = 0,
     var name: String = "",
     var price: Double = 0.0,
