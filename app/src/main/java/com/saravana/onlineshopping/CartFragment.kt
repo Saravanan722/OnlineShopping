@@ -35,11 +35,7 @@ class CartFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.root
-//        cart.addCart(
-//            Product(
-//                ID = 1, name = "Books", price = 3000.0, discount = 0.0, tax = 0.0
-//            ), 5
-//        )
+
 
         recyclerView = binding.recyclerView
         recyclerView.layoutManager = LinearLayoutManager(requireContext())

@@ -74,4 +74,14 @@ class Cart {
     }
 }
 
+fun main() {
+    val admin = Admin()
+    val cart1 = Cart()
+    admin.addStore()
+    println(Store.getStoreItem())
+    val cart = admin.copyProduct()
+    cart1.addCart(cart,1)
+    println(cart1.getCartItem())
+
+}
 

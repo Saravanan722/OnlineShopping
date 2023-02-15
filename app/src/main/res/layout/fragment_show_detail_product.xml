@@ -79,25 +79,20 @@
             android:layout_marginTop="10dp"
             android:text="DescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionv"
             android:textAlignment="textStart"
-            android:textColor="#AC9F9B"
+            android:textColor="#4E4B4A"
             android:textSize="30sp"
             android:textStyle="bold" />
 
-        <TextView
+        <ImageButton
             android:id="@+id/add_to_cart"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="5dp"
+            android:src="@drawable/baseline_add_shopping_cart"
             android:background="@drawable/forget"
             android:paddingLeft="10dp"
-            android:paddingRight="10dp"
-            android:text="add to cart"
-            android:textAlignment="center"
-            android:textColor="#FF5722"
-            android:textSize="30sp"
-            android:textStyle="bold" />
-
+            android:paddingRight="10dp" />
     </LinearLayout>
 
 </ScrollView>

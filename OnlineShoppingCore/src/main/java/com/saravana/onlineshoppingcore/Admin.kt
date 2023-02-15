@@ -42,7 +42,7 @@ class Admin {
     }
 
     fun deleteStoreProduct() {
-        println(Store.deleteProduct(papper))
+        Store.deleteProduct(papper)
     }
 
     fun showStoreItem() {

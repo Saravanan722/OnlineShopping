@@ -16,7 +16,6 @@ import com.saravana.onlineshoppingcore.Product
 import com.saravana.onlineshoppingcore.Store
 
 class StoreFragment : Fragment() {
-    private val admin = Admin()
     private var _binding: FragmentStoreBinding? = null
     private lateinit var recyclerView: RecyclerView
 
@@ -37,8 +36,11 @@ class StoreFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         binding.root
 
-        admin.addStore()
+        val searchItem = binding.productSearch
 
+        binding.searchBar.setOnClickListener {
+            Store.searchItem(searchItem.toString())
+        }
 
         recyclerView = binding.recyclerStoreView
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
