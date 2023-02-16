@@ -6,13 +6,14 @@ class Invoice(
 ) {
 
     fun getTotal(): Double {
-        val productTotal = products.map {
-            val discountAmount = (it.product.price * it.quantity) * it.product.discount / 100
-            val taxAmount = ((it.product.price * it.quantity) * it.product.tax / 100)
-            it.product.price * it.quantity + taxAmount - discountAmount
-        }.reduce(::add)
-
-        return productTotal - (productTotal * discount / 100)
+//        val productTotal = products.map {
+//            val discountAmount = (it.product.price * it.quantity) * it.product.discount / 100
+//            val taxAmount = ((it.product.price * it.quantity) * it.product.tax / 100)
+//            it.product.price * it.quantity + taxAmount - discountAmount
+//        }.reduce(::add)
+//
+//        return productTotal - (productTotal * discount / 100)
+        return 0.0
     }
 
     fun applyCoupon(coupon: String?): Double {
