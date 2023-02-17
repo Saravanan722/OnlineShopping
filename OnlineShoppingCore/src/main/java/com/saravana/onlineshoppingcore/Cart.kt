@@ -1,7 +1,5 @@
 package com.saravana.onlineshoppingcore
 
-
-
 class Cart {
     private val cartItem = mutableListOf<CartItem>()
 
@@ -69,14 +67,9 @@ class Cart {
 
         Store.addItem(product)
     }
-}
 
-fun main() {
-    val admin = Admin()
-    val cart1 = Cart()
-    admin.addStore()
-    println(Store.getStoreItem())
-    println(cart1.getCartItem())
 
 }
+
+
 
