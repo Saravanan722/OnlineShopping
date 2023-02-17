@@ -1,7 +1,6 @@
 package com.saravana.onlineshopping
 
 import Adapter.StoreAdapter
-import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -11,8 +10,6 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.saravana.onlineshopping.databinding.FragmentStoreBinding
-import com.saravana.onlineshoppingcore.Admin
-import com.saravana.onlineshoppingcore.Product
 import com.saravana.onlineshoppingcore.Store
 
 class StoreFragment : Fragment() {
