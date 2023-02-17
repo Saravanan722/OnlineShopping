@@ -3,10 +3,12 @@ package Adapter
 import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.saravana.onlineshopping.databinding.ItemViewBinding
+import com.saravana.onlineshoppingcore.Cart
 import com.saravana.onlineshoppingcore.CartItem
 
 class CartAdapter(val cartItem: List<CartItem>) :
@@ -47,8 +49,10 @@ class CartAdapter(val cartItem: List<CartItem>) :
         private val imageView: ImageView = binding.productImage
         private val productPrice: TextView = binding.productPrice
         private val productDiscount: TextView = binding.productDiscount
-        private val productRemove: TextView = binding.productRemoved
-        private val productSaveForLater: TextView = binding.savedForLater
+        private val productRemove: ImageButton= binding.productRemoved
+        private val productSaveForLater: ImageButton = binding.savedForLater
+        private val totalPrice:TextView = binding.totalPrice
+        private val deliveryCharge:TextView = binding.deliveryCharge
 
 
         private var currentItem: CartItem? = null
@@ -61,7 +65,7 @@ class CartAdapter(val cartItem: List<CartItem>) :
             productRemove.setOnClickListener {
                 listener.onItemClick(adapterPosition)
                 productSaveForLater.setOnClickListener {
-                    listener.onItemClick(adapterPosition)
+                    Cart.removeCartItem(adapterPosition)
 
                 }
 
@@ -76,6 +80,7 @@ class CartAdapter(val cartItem: List<CartItem>) :
             productQuantity.text = "${cartItem.quantity}"
             productPrice.text = "$${cartItem.product.price}"
             productDiscount.text = "% ${cartItem.product.discount}"
+
 
 
         }
