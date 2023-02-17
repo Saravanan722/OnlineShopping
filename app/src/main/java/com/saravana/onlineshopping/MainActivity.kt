@@ -1,5 +1,6 @@
 package com.saravana.onlineshopping
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
@@ -13,8 +14,6 @@ import com.saravana.onlineshoppingcore.Cart
 
 class MainActivity : AppCompatActivity() {
     private val admin = Admin()
-    private val cart = Cart()
-
     private lateinit var binding: ActivityMainBinding
 
 
@@ -25,16 +24,12 @@ class MainActivity : AppCompatActivity() {
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-
-        binding.homeButton.setOnClickListener {
-            replaceFragment(StoreFragment())
+        binding.startButton.setOnClickListener {
+            val intent = Intent(this@MainActivity,HomeActivity::class.java,)
+            startActivity(intent)
         }
-        binding.cartButton.setOnClickListener {
-            replaceFragment(CartFragment())
-        }
+
         admin.addStore()
-
     }
 
 
@@ -53,12 +48,7 @@ class MainActivity : AppCompatActivity() {
         return super.onOptionsItemSelected(item)
     }
 
-    private fun replaceFragment(fragment: Fragment) {
-        val fragmentManager = supportFragmentManager
-        val fragmentTransaction = fragmentManager.beginTransaction()
-        fragmentTransaction.replace(R.id.fragment_container, fragment)
-        fragmentTransaction.commit()
-    }
+
 
 
 }
