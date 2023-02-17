@@ -53,8 +53,8 @@ class ShowDetailProductFragment : Fragment() {
         }
 
         binding.addToCart.setOnClickListener {
-            cart.addCart(item, changeQuantity)
             Toast.makeText(requireContext(), "Added to cart ", Toast.LENGTH_SHORT).show()
+            cart.addCart(item, changeQuantity)
         }
         initialSetup(item)
     }
