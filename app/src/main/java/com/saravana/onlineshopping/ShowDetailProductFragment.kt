@@ -7,19 +7,17 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.saravana.onlineshopping.databinding.FragmentShowDetailProductBinding
-import com.saravana.onlineshoppingcore.Admin
-import com.saravana.onlineshoppingcore.Cart
-import com.saravana.onlineshoppingcore.Product
+import com.saravana.onlineshoppingcore.*
 
 /**
  * A simple [Fragment] subclass as the second destination in the navigation.
  */
 class ShowDetailProductFragment : Fragment() {
-    private val admin = Admin()
-    private val cart = Cart()
-    private var _binding: FragmentShowDetailProductBinding? = null
-    private var changeQuantity = 1
 
+    private var _binding:FragmentShowDetailProductBinding? = null
+    private var changeQuantity = 1
+    private var item = Store.getStoreItem()
+    private var currentItem: Product? = null
     // This property is only valid between onCreateView and
     // onDestroyView.
     private val binding get() = _binding!!
@@ -35,8 +33,27 @@ class ShowDetailProductFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        val item = admin.copyProduct()
 
+        item.forEach {
+            initialSetup(it)
+            changeQuantityAddToCart(it)
+        }
+
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
+
+    private fun initialSetup(product: Product) {
+        currentItem = product
+        binding.DescriptionText.text = product.description
+        binding.titleText.text = product.name
+        binding.priceText.text = product.price.toString()
+    }
+
+    private fun changeQuantityAddToCart(product: Product) {
         if (changeQuantity <= 1) {
 
             binding.quantityDecrement.setOnClickListener {
@@ -52,22 +69,15 @@ class ShowDetailProductFragment : Fragment() {
             }
         }
 
+        Cart.changeQuantity(product.ID, changeQuantity)
+
         binding.addToCart.setOnClickListener {
             Toast.makeText(requireContext(), "Added to cart ", Toast.LENGTH_SHORT).show()
-            cart.addCart(item, changeQuantity)
+
+            Cart.addCart(product, changeQuantity)
+
         }
-        initialSetup(item)
+
     }
 
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
-    }
-
-    private fun initialSetup(product: Product) {
-
-        binding.DescriptionText.text = product.description
-        binding.titleText.text = product.name
-        binding.priceText.text = product.price.toString()
-    }
 }

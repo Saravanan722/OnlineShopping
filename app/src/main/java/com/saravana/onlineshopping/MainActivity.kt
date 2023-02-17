@@ -2,15 +2,15 @@ package com.saravana.onlineshopping
 
 import android.content.Intent
 import android.os.Bundle
+import android.os.Handler
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
+import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.AppCompatActivity
-import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import com.saravana.onlineshopping.databinding.ActivityMainBinding
 import com.saravana.onlineshoppingcore.Admin
-import com.saravana.onlineshoppingcore.Cart
 
 class MainActivity : AppCompatActivity() {
     private val admin = Admin()
@@ -24,10 +24,12 @@ class MainActivity : AppCompatActivity() {
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
         binding.startButton.setOnClickListener {
-            val intent = Intent(this@MainActivity,HomeActivity::class.java,)
+            val intent = Intent(this@MainActivity, HomeActivity::class.java)
             startActivity(intent)
         }
+     //   actionBar()
 
         admin.addStore()
     }
@@ -49,6 +51,14 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-
+    fun actionBar() {
+        val actionBar: ActionBar? = supportActionBar
+        actionBar?.hide()
+        Handler().postDelayed({
+            val intent = Intent(this@MainActivity, HomeActivity::class.java)
+            startActivity(intent)
+            finish()
+        }, 2000)
+    }
 
 }

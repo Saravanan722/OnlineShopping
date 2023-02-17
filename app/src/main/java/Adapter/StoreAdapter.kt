@@ -1,18 +1,12 @@
 package Adapter
 
-import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.core.content.ContentProviderCompat.requireContext
-import androidx.core.content.ContextCompat.startActivity
-import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
-import com.saravana.onlineshopping.R
-import com.saravana.onlineshopping.ShowDetailProductFragment
-import com.saravana.onlineshopping.StoreFragment
 import com.saravana.onlineshopping.databinding.StoreItemBinding
+import com.saravana.onlineshoppingcore.CartItem
 import com.saravana.onlineshoppingcore.Product
 import com.saravana.onlineshoppingcore.Store
 
@@ -52,14 +46,16 @@ class StoreAdapter(val storeItem: List<Product>) :
         private val storeItemDiscountView: TextView = binding.storeItemDiscountView
         private val storeItemTax: TextView = binding.storeItemTax
 
+        private var currentItem: Product? = null
+
         init {
             storeItemImageView.setOnClickListener {
                 listener.onStoreItemClick(adapterPosition)
-
             }
         }
 
         fun bind(product: Product) {
+            currentItem = product
             storeItemNameTextView.text = product.name
             storeItemPriceView.text = product.price.toString()
             storeItemDiscountView.text = product.discount.toString()
