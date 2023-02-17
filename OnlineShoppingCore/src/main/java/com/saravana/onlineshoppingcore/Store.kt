@@ -36,11 +36,11 @@ object Store {
     ): List<Product> {
 
         val filter = when {
-            startPrice != endPrice -> items.filter { it.price in startPrice!!..endPrice!! }
+            startPrice != endPrice -> items.filter { it.price!! in startPrice!!..endPrice!! }
 
-            filterStartLetter != null -> items.filter { it.name.startsWith(filterStartLetter.uppercase()) }
+            filterStartLetter != null -> items.filter { it.name!!.startsWith(filterStartLetter.uppercase()) }
 
-            filterEndLetter != null -> items.filter { it.name.endsWith(filterEndLetter) }
+            filterEndLetter != null -> items.filter { it.name!!.endsWith(filterEndLetter) }
 
             filterName != null -> items.sortedBy { it.name }
             else -> items.sortedBy { it.price }
