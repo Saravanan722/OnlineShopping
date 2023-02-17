@@ -118,7 +118,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="4dp"
-        android:text="$ 00.0"
+        android:text="$ 5.0"
         android:textAppearance="?attr/textAppearanceHeadline5"
         android:textColor="#FF5722"
         android:textSize="20sp"
@@ -153,26 +153,24 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/delivery_charge" />
 
-    <Button
+    <ImageButton
         android:id="@+id/saved_for_later"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:layout_margin="20dp"
-        android:text="SavedForLater"
+        android:src="@drawable/baseline_add_shopping_cart"
         android:textAppearance="?attr/textAppearanceHeadline5"
-        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/total_price" />
 
-    <Button
+    <ImageButton
         android:id="@+id/product_removed"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:layout_margin="20dp"
-        android:text="Remove"
+        android:src="@drawable/baseline_delete"
         android:textAppearance="?attr/textAppearanceHeadline5"
-        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/total_price" />
