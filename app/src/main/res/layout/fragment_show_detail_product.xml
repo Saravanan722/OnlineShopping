@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:andrandroid="http://schemas.android.com/apk/res-auto"
     android:background="@color/white"
     tools:context=".ShowDetailProductFragment">
 
@@ -50,6 +51,7 @@
                 android:id="@+id/quantity_decrement"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:backgroundTint="#F18968"
                 android:layout_gravity="center"
                 android:src="@drawable/baseline_minimize" />
 
@@ -60,7 +62,7 @@
                 android:layout_marginTop="10dp"
                 android:text="1"
                 android:textAlignment="center"
-                android:textColor="#FF5722"
+                android:textColor="#CD3606"
                 android:textSize="30sp"
                 android:textStyle="bold" />
 
@@ -69,6 +71,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:backgroundTint="#F18968"
                 android:src="@drawable/baseline_plus_one" />
         </LinearLayout>
 
@@ -83,16 +86,36 @@
             android:textSize="30sp"
             android:textStyle="bold" />
 
-        <ImageButton
+        <Button
             android:id="@+id/add_to_cart"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:layout_marginBottom="5dp"
-            android:src="@drawable/baseline_add_shopping_cart"
+            android:layout_marginBottom="40dp"
+            android:text="add To Cart"
             android:background="@drawable/forget"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp" />
+            andrandroid:backgroundTint="#FFC107"
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="40dp"
+            android:textAlignment="center"
+            android:textColor="#F8F6F5"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+        <Button
+            android:id="@+id/order_product"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="40dp"
+            android:text="Order"
+            android:background="@drawable/forget"
+            andrandroid:backgroundTint="#E68C08"
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="40dp"
+            android:textAlignment="center"
+            android:textColor="#F8F6F5"
+            android:textSize="20sp"
+            android:textStyle="bold" />
     </LinearLayout>
 
 </ScrollView>
