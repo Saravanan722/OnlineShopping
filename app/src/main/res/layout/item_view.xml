@@ -160,6 +160,7 @@
         android:src="@drawable/baseline_minimize"
         android:textAppearance="?attr/textAppearanceHeadline5"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_weight="1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/total_price" />
 
@@ -175,6 +176,7 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@id/cart_qty_increment"
+        app:layout_constraintHorizontal_weight="1"
         app:layout_constraintStart_toStartOf="@id/cart_qty_dec"
         app:layout_constraintTop_toBottomOf="@id/total_price" />
 
@@ -186,6 +188,7 @@
         android:src="@drawable/baseline_increment"
         android:textAppearance="?attr/textAppearanceHeadline5"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_weight="1"
         app:layout_constraintStart_toEndOf="@id/cart_quantity"
         app:layout_constraintTop_toBottomOf="@id/total_price" />
 
@@ -197,6 +200,7 @@
         android:src="@drawable/baseline_delete"
         android:textAppearance="?attr/textAppearanceHeadline5"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_weight="1"
         app:layout_constraintStart_toEndOf="@id/cart_qty_increment"
         app:layout_constraintTop_toBottomOf="@id/total_price" />
 
@@ -205,13 +209,14 @@
         android:layout_width="wrap_content"
         android:layout_height="50dp"
         android:layout_margin="20dp"
-        android:text="save for later"
         android:backgroundTint="#D5D0AC"
-        android:textSize="15sp"
-        android:textColor="#000"
+        android:text="save for later"
         android:textAppearance="?attr/textAppearanceHeadline5"
+        android:textColor="#000"
+        android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_weight="1"
         app:layout_constraintStart_toEndOf="@id/product_removed"
         app:layout_constraintTop_toBottomOf="@id/total_price" />
 

@@ -12,7 +12,7 @@ import com.saravana.onlineshoppingcore.Store
 
 class StoreAdapter(val storeItem: List<Product>) :
     RecyclerView.Adapter<StoreAdapter.StoreViewHolder>() {
-    private lateinit var mListener: StoreAdapter.OnItemClickListener
+    private lateinit var mListener:OnItemClickListener
 
     interface OnItemClickListener {
         fun onStoreItemClick(position: Int)
@@ -33,6 +33,7 @@ class StoreAdapter(val storeItem: List<Product>) :
     override fun onBindViewHolder(holder: StoreViewHolder, position: Int) {
         val product = storeItem[position]
         holder.bind(product)
+
 
 
     }

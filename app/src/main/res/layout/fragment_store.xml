@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".StoreFragment">
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_store_view"
         android:layout_width="match_parent"
@@ -13,46 +14,6 @@
         android:clipToPadding="false"
         android:padding="16dp"
         tools:listitem="@layout/store_item" />
-    <!--    <TextView-->
-    <!--        android:id="@+id/user_name"-->
-    <!--        android:layout_width="wrap_content"-->
-    <!--        android:layout_height="wrap_content"-->
-    <!--        android:layout_marginTop="10dp"-->
-    <!--        android:text="Jack J"-->
-    <!--        android:textColor="#000"-->
-    <!--        android:textSize="18sp"-->
-    <!--        app:layout_constraintStart_toStartOf="parent"-->
-    <!--        app:layout_constraintTop_toTopOf="parent" />-->
-
-    <!--    <TextView-->
-    <!--        android:id="@+id/user_order"-->
-    <!--        android:layout_width="wrap_content"-->
-    <!--        android:layout_height="wrap_content"-->
-    <!--        android:layout_marginTop="5dp"-->
-    <!--        android:text="Order and Purchase"-->
-    <!--        android:textColor="#000"-->
-    <!--        android:textSize="18sp"-->
-    <!--        app:layout_constraintStart_toStartOf="parent"-->
-    <!--        app:layout_constraintTop_toBottomOf="@id/user_name" />-->
-
-    <!--    <TextView-->
-    <!--        android:id="@+id/search"-->
-    <!--        android:layout_width="wrap_content"-->
-    <!--        android:layout_height="wrap_content"-->
-    <!--        android:layout_marginTop="5dp"-->
-    <!--        android:text="Order and Purchase"-->
-    <!--        android:textColor="#000"-->
-    <!--        android:textSize="18sp"-->
-    <!--        app:layout_constraintStart_toStartOf="parent"-->
-    <!--        app:layout_constraintTop_toBottomOf="@id/user_name" />-->
-
-    <!--    <ImageView-->
-    <!--        android:id="@+id/user_image_view"-->
-    <!--        android:layout_width="140dp"-->
-    <!--        android:layout_height="140dp"-->
-    <!--        android:src="@drawable/baseline_account_circle"-->
-    <!--        app:layout_constraintEnd_toEndOf="parent"-->
-    <!--        app:layout_constraintTop_toTopOf="parent" />-->
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/search_bar"
@@ -84,7 +45,6 @@
             app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -10,6 +10,7 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.saravana.onlineshopping.databinding.FragmentStoreBinding
+import com.saravana.onlineshoppingcore.Product
 import com.saravana.onlineshoppingcore.Store
 
 class StoreFragment : Fragment() {
@@ -34,9 +35,8 @@ class StoreFragment : Fragment() {
         binding.root
 
         val searchItem = binding.productSearch
-
         binding.searchBar.setOnClickListener {
-            Store.searchItem(searchItem.toString())
+
         }
 
         recyclerView = binding.recyclerStoreView
