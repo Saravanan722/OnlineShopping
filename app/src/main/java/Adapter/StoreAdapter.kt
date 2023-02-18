@@ -6,7 +6,6 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.saravana.onlineshopping.databinding.StoreItemBinding
-import com.saravana.onlineshoppingcore.CartItem
 import com.saravana.onlineshoppingcore.Product
 import com.saravana.onlineshoppingcore.Store
 

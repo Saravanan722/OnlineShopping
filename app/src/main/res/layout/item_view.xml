@@ -4,7 +4,6 @@
     android:id="@+id/item_view"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="8dp"
     android:background="@drawable/layout_border">
 
     <ImageView
@@ -154,14 +153,40 @@
         app:layout_constraintTop_toBottomOf="@id/delivery_charge" />
 
     <ImageButton
-        android:id="@+id/saved_for_later"
+        android:id="@+id/cart_qty_dec"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_margin="20dp"
-        android:src="@drawable/baseline_add_shopping_cart"
+        android:src="@drawable/baseline_minimize"
         android:textAppearance="?attr/textAppearanceHeadline5"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/total_price" />
+
+    <TextView
+        android:id="@+id/cart_quantity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="4dp"
+        android:text="2"
+        android:textAppearance="?attr/textAppearanceHeadline5"
+        android:textColor="#FF5722"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/cart_qty_increment"
+        app:layout_constraintStart_toStartOf="@id/cart_qty_dec"
+        app:layout_constraintTop_toBottomOf="@id/total_price" />
+
+    <ImageButton
+        android:id="@+id/cart_qty_increment"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_margin="20dp"
+        android:src="@drawable/baseline_increment"
+        android:textAppearance="?attr/textAppearanceHeadline5"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/cart_quantity"
         app:layout_constraintTop_toBottomOf="@id/total_price" />
 
     <ImageButton
@@ -172,7 +197,22 @@
         android:src="@drawable/baseline_delete"
         android:textAppearance="?attr/textAppearanceHeadline5"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/cart_qty_increment"
+        app:layout_constraintTop_toBottomOf="@id/total_price" />
+
+    <Button
+        android:id="@+id/save_for_later"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_margin="20dp"
+        android:text="save for later"
+        android:backgroundTint="#D5D0AC"
+        android:textSize="15sp"
+        android:textColor="#000"
+        android:textAppearance="?attr/textAppearanceHeadline5"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/product_removed"
         app:layout_constraintTop_toBottomOf="@id/total_price" />
 
 
