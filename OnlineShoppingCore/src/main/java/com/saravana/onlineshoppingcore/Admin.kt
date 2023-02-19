@@ -32,13 +32,13 @@ class Admin {
     )
 
     fun addStore() {
-        Store.addItem(pen)
-        Store.addItem(ball)
-        Store.addItem(scissors)
-        Store.addItem(watch)
-//        Store.addItems(mobile)
-      Store.addItem(apple)
-       // Store.addItem(pen, ball, scissors, watch, mobile, apple)
+//        Store.addItem(pen)
+//        Store.addItem(ball)
+//        Store.addItem(scissors)
+//        Store.addItem(watch)
+//      Store.addItems(mobile)
+//      Store.addItem(apple)
+        Store.addItem(pen, ball, scissors, watch, mobile, apple)
     }
 
     fun deleteStoreProduct() {

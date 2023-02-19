@@ -58,6 +58,7 @@ class ShowDetailProductFragment : Fragment() {
 
             binding.quantityDecrement.setOnClickListener {
                 changeQuantity--
+
                 binding.quantityText.text = changeQuantity.toString()
             }
         }
