@@ -2,7 +2,6 @@ package com.saravana.onlineshoppingcore
 
 class Cart {
     companion object {
-
         private val cartItem = mutableListOf<CartItem>()
         fun addCart(product: Product, quantity: Int) {
             cartItem.add(

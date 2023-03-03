@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.saravana.onlineshopping.databinding.FragmentCartBinding
 import com.saravana.onlineshoppingcore.Cart
+import com.saravana.onlineshoppingcore.CartItem
 
 class CartFragment : Fragment() {
 

@@ -14,10 +14,11 @@ import com.saravana.onlineshoppingcore.*
  */
 class ShowDetailProductFragment : Fragment() {
 
-    private var _binding:FragmentShowDetailProductBinding? = null
+    private var _binding: FragmentShowDetailProductBinding? = null
     private var changeQuantity = 1
     private var item = Store.getStoreItem()
     private var currentItem: Product? = null
+
     // This property is only valid between onCreateView and
     // onDestroyView.
     private val binding get() = _binding!!
@@ -62,21 +63,17 @@ class ShowDetailProductFragment : Fragment() {
                 binding.quantityText.text = changeQuantity.toString()
             }
         }
-
-        if (changeQuantity >= 1) {
+        if (changeQuantity >= 2) {
             binding.quantityIncrement.setOnClickListener {
                 changeQuantity++
                 binding.quantityText.text = changeQuantity.toString()
             }
         }
-
         Cart.changeQuantity(product.ID, changeQuantity)
 
         binding.addToCart.setOnClickListener {
             Toast.makeText(requireContext(), "Added to cart ", Toast.LENGTH_SHORT).show()
-
             Cart.addCart(product, changeQuantity)
-
         }
 
     }
