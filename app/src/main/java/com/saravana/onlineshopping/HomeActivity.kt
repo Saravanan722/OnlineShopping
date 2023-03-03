@@ -8,8 +8,6 @@ import com.saravana.onlineshoppingcore.Cart
 
 class HomeActivity : AppCompatActivity() {
 
-    private val cart = Cart()
-
     private lateinit var binding: ActivityHomeBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

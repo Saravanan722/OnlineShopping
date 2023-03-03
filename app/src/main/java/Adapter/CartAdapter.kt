@@ -8,12 +8,13 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.saravana.onlineshopping.databinding.ItemViewBinding
+import com.saravana.onlineshoppingcore.Cart
 import com.saravana.onlineshoppingcore.CartItem
+import com.saravana.onlineshoppingcore.Invoice
 
 class CartAdapter(val cartItem: List<CartItem>) :
-    RecyclerView.Adapter<CartAdapter.CartViewHolder>() {
+        RecyclerView.Adapter<CartAdapter.CartViewHolder>() {
     private lateinit var mListener: OnItemClickListener
-
 
     interface OnItemClickListener {
         fun onItemClick(position: Int)
@@ -42,18 +43,19 @@ class CartAdapter(val cartItem: List<CartItem>) :
     }
 
     inner class CartViewHolder(binding: ItemViewBinding, listener: OnItemClickListener) :
-        RecyclerView.ViewHolder(binding.root) {
+            RecyclerView.ViewHolder(binding.root) {
         private val productQuantity: TextView = binding.productQuantity
         private val productName: TextView = binding.productName
         private val imageView: ImageView = binding.productImage
         private val productPrice: TextView = binding.productPrice
         private val productDiscount: TextView = binding.productDiscount
-        private val productRemove: ImageButton= binding.productRemoved
-        private val totalPrice:TextView = binding.totalPrice
-        private val deliveryCharge:TextView = binding.deliveryCharge
+        private val productRemove: ImageButton = binding.productRemoved
+        private val totalPrice: TextView = binding.totalPrice
+        private val deliveryCharge: TextView = binding.deliveryCharge
 
 
         private var currentItem: CartItem? = null
+
 
         init {
             imageView.setOnClickListener {
@@ -74,15 +76,10 @@ class CartAdapter(val cartItem: List<CartItem>) :
             productQuantity.text = "${cartItem.quantity}"
             productPrice.text = "$${cartItem.product.price}"
             productDiscount.text = "% ${cartItem.product.discount}"
-
-
-
+            // totalPrice.text = invoice.getTotal().toString()
+            deliveryCharge.text = "$: 10"
         }
-
     }
-
-
-
 }
 
 
