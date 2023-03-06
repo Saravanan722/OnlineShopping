@@ -29,7 +29,7 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this@MainActivity, HomeActivity::class.java)
             startActivity(intent)
         }
-     //   actionBar()
+        actionBar()
 
         admin.addStore()
     }
@@ -51,7 +51,7 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-    fun actionBar() {
+    private fun actionBar() {
         val actionBar: ActionBar? = supportActionBar
         actionBar?.hide()
         Handler().postDelayed({

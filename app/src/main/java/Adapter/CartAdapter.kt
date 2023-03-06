@@ -76,7 +76,7 @@ class CartAdapter(val cartItem: List<CartItem>) :
             productQuantity.text = "${cartItem.quantity}"
             productPrice.text = "$${cartItem.product.price}"
             productDiscount.text = "% ${cartItem.product.discount}"
-            // totalPrice.text = invoice.getTotal().toString()
+            totalPrice.text = Invoice.getTotal().toString()
             deliveryCharge.text = "$: 10"
         }
     }
