@@ -22,6 +22,12 @@ class HomeActivity : AppCompatActivity() {
         binding.cartButton.setOnClickListener {
             replaceFragment(CartFragment())
         }
+        binding.personButton.setOnClickListener {
+            replaceFragment(SignUp())
+        }
+        binding.dehazeButton.setOnClickListener {
+            replaceFragment(Login())
+        }
     }
 
     private fun replaceFragment(fragment: Fragment) {

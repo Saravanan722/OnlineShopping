@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/gradient_color"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:theme="@style/ThemeOverlay.OnlineShopping.FullscreenContainer"
+    tools:context=".Login">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -11,6 +13,7 @@
         android:orientation="vertical">
 
         <TextView
+            android:id="@+id/welcome_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -21,6 +24,7 @@
             android:textStyle="bold" />
 
         <TextView
+            android:id="@+id/sign_msg"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -38,6 +42,7 @@
         android:orientation="vertical">
 
         <TextView
+            android:id="@+id/login_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="35dp"
@@ -48,6 +53,7 @@
             android:textStyle="bold" />
 
         <TextView
+            android:id="@+id/email_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="40dp"
@@ -58,6 +64,7 @@
             android:textStyle="bold" />
 
         <EditText
+            android:id="@+id/email_edit_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="35dp"
@@ -66,6 +73,7 @@
             android:text="Enter the Email" />
 
         <TextView
+            android:id="@+id/password_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="40dp"
@@ -76,6 +84,7 @@
             android:textStyle="bold" />
 
         <EditText
+            android:id="@+id/password_edit_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="35dp"
@@ -85,6 +94,7 @@
             android:text="Enter the Password" />
 
         <TextView
+            android:id="@+id/forget_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="end"
@@ -96,6 +106,7 @@
             android:textStyle="bold" />
 
         <Button
+            android:id="@+id/login_button"
             android:layout_width="340dp"
             android:layout_height="50dp"
             android:layout_marginLeft="35dp"
@@ -104,7 +115,9 @@
             android:background="@drawable/forget"
             android:text="Login" />
 
+
         <TextView
+            android:id="@+id/sign_up_msg"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"

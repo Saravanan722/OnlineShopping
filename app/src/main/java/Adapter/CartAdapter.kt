@@ -15,7 +15,7 @@ import com.saravana.onlineshoppingcore.Invoice
 class CartAdapter(val cartItem: List<CartItem>) :
         RecyclerView.Adapter<CartAdapter.CartViewHolder>() {
     private lateinit var mListener: OnItemClickListener
-
+    val invoice = Invoice(cartItem,10.0)
     interface OnItemClickListener {
         fun onItemClick(position: Int)
 
@@ -76,7 +76,7 @@ class CartAdapter(val cartItem: List<CartItem>) :
             productQuantity.text = "${cartItem.quantity}"
             productPrice.text = "$${cartItem.product.price}"
             productDiscount.text = "% ${cartItem.product.discount}"
-            totalPrice.text = Invoice.getTotal().toString()
+            totalPrice.text = invoice.getTotal().toString()
             deliveryCharge.text = "$: 10"
         }
     }
