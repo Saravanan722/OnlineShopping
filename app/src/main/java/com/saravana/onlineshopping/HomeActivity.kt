@@ -4,7 +4,6 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.saravana.onlineshopping.databinding.ActivityHomeBinding
-import com.saravana.onlineshoppingcore.Cart
 
 class HomeActivity : AppCompatActivity() {
 
