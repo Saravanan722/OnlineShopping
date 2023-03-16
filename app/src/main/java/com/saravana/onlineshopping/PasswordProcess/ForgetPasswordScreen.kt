@@ -1,4 +1,4 @@
-package com.saravana.onlineshopping
+package com.saravana.onlineshopping.PasswordProcess
 
 import android.os.Bundle
 import android.os.Handler
@@ -6,14 +6,19 @@ import android.os.Looper
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.WindowManager
+import android.widget.Button
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import com.saravana.onlineshopping.databinding.FragmentSignUpBinding
+import com.saravana.onlineshopping.databinding.FragmentForgetPasswordScreenBinding
 
-class SignUp : Fragment() {
-    private val hideHandler = Handler(Looper.myLooper()!!)
+/**
+ * An example full-screen fragment that shows and hides the system UI (i.e.
+ * status bar and navigation/system bar) with user interaction.
+ */
+class ForgetPasswordScreen : Fragment() {
 
-
-    private var _binding: FragmentSignUpBinding? = null
+    private var _binding: FragmentForgetPasswordScreenBinding? = null
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -25,7 +30,7 @@ class SignUp : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        _binding = FragmentSignUpBinding.inflate(inflater, container, false)
+        _binding = FragmentForgetPasswordScreenBinding.inflate(inflater, container, false)
         return binding.root
 
     }
@@ -33,11 +38,11 @@ class SignUp : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.root
+
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
     }
-
-  }
+}

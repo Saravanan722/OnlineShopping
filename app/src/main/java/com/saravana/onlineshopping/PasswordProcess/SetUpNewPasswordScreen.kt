@@ -1,15 +1,24 @@
-package com.saravana.onlineshopping
+package com.saravana.onlineshopping.PasswordProcess
 
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.WindowManager
+import android.widget.Button
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import com.saravana.onlineshopping.databinding.FragmentLoginBinding
+import com.saravana.onlineshopping.databinding.FragmentSetUpNewPasswordScreenBinding
 
-class Login : Fragment() {
+/**
+ * An example full-screen fragment that shows and hides the system UI (i.e.
+ * status bar and navigation/system bar) with user interaction.
+ */
+class SetUpNewPasswordScreen : Fragment() {
 
-    private var _binding: FragmentLoginBinding? = null
+    private var _binding: FragmentSetUpNewPasswordScreenBinding? = null
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -21,7 +30,7 @@ class Login : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        _binding = FragmentLoginBinding.inflate(inflater, container, false)
+        _binding = FragmentSetUpNewPasswordScreenBinding.inflate(inflater, container, false)
         return binding.root
 
     }
@@ -29,11 +38,10 @@ class Login : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.root
-
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
-        _binding= null
+        _binding = null
     }
 }

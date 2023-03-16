@@ -3,6 +3,8 @@ package com.saravana.onlineshopping
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import com.saravana.onlineshopping.Login.Login
+import com.saravana.onlineshopping.Sign_Up.SignUp
 import com.saravana.onlineshopping.databinding.ActivityHomeBinding
 
 class HomeActivity : AppCompatActivity() {

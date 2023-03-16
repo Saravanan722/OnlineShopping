@@ -30,14 +30,10 @@
     <string name="username_input">Type your username</string>
     <string name="username">Username</string>
     <string name="login_btn">LOGIN</string>
-    <string name="sign_up_using">Sign Up Using</string>
+    <string name="sign_up_using">Or Sign Up with</string>
     <string name="password_forget">Forget password?</string>
     <string name="login_text">Login</string>
-
-
-
-
-
+    <string name="dummy_content">DUMMY\nCONTENT</string>
 
 
 </resources>
